@@ -1,0 +1,28 @@
+#  Template NodeJS build
+
+#  This template allows you to validate your NodeJS code.
+#  The workflow allows running tests and code linting on the default branch.
+
+image: node:18.13.0
+
+pipelines:
+  default:
+    - step:
+        name: Build and test
+        caches:
+          - node
+        script:
+          - npm install --legacy-peer-deps
+          - npm run build
+        artifacts:
+          - build/**
+    - step:
+        name: Deploy artifacts using SCP to PROD
+        deployment: production
+        script:
+          - pipe: atlassian/scp-deploy:0.3.3
+            variables:
+              USER: $USER
+              SERVER: $SERVER
+              REMOTE_PATH: '/var/www/digitalbrann/frontend'
+              LOCAL_PATH: 'build/*'

@@ -1,0 +1,129 @@
+.auth-layout {
+  .container {
+    min-height: 100vh;
+
+    .banner {
+      position: relative;
+      background: url(../images/banner.png) center/cover;
+
+      .logo {
+        position: absolute;
+        top: 50px;
+        width: 100%;
+      }
+
+      .caption {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 370px;
+        text-align: center;
+      }
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.auth-form {
+  text-align: left;
+  table {
+    width: 100%;
+    border-spacing: 0;
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #c5c5c5;
+
+      &.noborder {
+        border: 0;
+      }
+
+      &.nopadding {
+        padding: 0;
+      }
+
+      &.sky {
+        background-color: #d1f5ff;
+      }
+      &.pink {
+        background-color: #ffd1d1;
+      }
+      &.yellow {
+        background-color: #ffeed1;
+      }
+      &.gray {
+        background-color: #f3f3f3;
+      }
+
+      &.flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12;
+      }
+
+      &.btn-groups {
+        padding: 1rem 0 0 0;
+        & > button:last-child {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &.noborder {
+      thead {
+        background-color: #f3f3f3;
+        tr {
+          th {
+            border: 0;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            border: 0;
+            border-bottom: 1px solid #f2f2f2;
+          }
+          &:last-of-type > td {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .ant-form-item {
+      margin: 0;
+    }
+  }
+}
+
+.brann-registeration-sider {
+  position: relative;
+
+  .brann-logo-wrapper {
+    padding: 0 40px;
+  }
+
+  .brann-registeration-back {
+    width: 100%;
+    position: absolute;
+    bottom: 4rem;
+    text-align: center;
+    a {
+      border: 1px solid #ccc;
+      font-size: 16px;
+      color: white;
+      padding: 0.75rem 4rem;
+    }
+  }
+}
